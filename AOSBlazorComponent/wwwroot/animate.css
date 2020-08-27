@@ -1,18 +1,24 @@
-﻿[data-blazor^='fade']{
+﻿[data-blazor^='fade'] {
     opacity: 0;
+    margin:0,0,0,0;
+    position: absolute;
     transition-property: opacity, transform;
     transition-duration: 1s;
     transition-delay: 0ms;
     transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+    z-index: -1;
 }
 
     [data-blazor^='fade'][blazoranimate=aos-animate] {
         opacity: 1;
+        margin: 0,0,0,0;
         transform: none;
+        position: absolute;
         transition-property: opacity, transform;
         transition-duration: 1s;
         transition-delay: 0s;
         transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+        z-index: -1;
     }
 
 [data-blazor='fade-up'] {

@@ -1,4 +1,4 @@
-﻿<div class="@ClassName" data-blazor-duration="@BlazorDurationAOS" data-blazor-easing="@BlazorEasingAOS" data-blazor-delay="@BlazorDelayAOS" data-blazor="@BlazorAOS" blazoranimate="@AosAnimate">
+﻿<div class="@ClassName" style="transition-duration:@($"{StyleTime}ms");height:100%; overflow:hidden;" data-blazor-duration="@BlazorDurationAOS" data-blazor-easing="@BlazorEasingAOS" data-blazor-delay="@BlazorDelayAOS" data-blazor="@BlazorAOS" blazoranimate="@AosAnimate">
     @ChildContent
 </div>
 @code {
@@ -16,6 +16,8 @@
     public string BlazorEasingAOS { get; set; }
     [Parameter]
     public bool Animate { get; set; }
+    [Parameter]
+    public int StyleTime { get; set; }
 
     string AosAnimate;
 

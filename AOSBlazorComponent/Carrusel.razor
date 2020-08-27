@@ -1,0 +1,35 @@
+﻿<Div  BlazorAOS="fade" StyleTime="Time" Animate="Animate">
+    <img src="@ImageUri" />
+</Div>
+
+
+@code {
+
+    [Parameter]
+    public List<String> Images { get; set; }
+    [Parameter]
+    public int Time { get; set; }
+
+    string ImageUri;
+    bool Animate;
+
+
+    protected async override Task OnInitializedAsync()
+    {
+
+        do
+        {
+            foreach (var I in Images)
+            {
+                ImageUri = I;
+                Animate = true;
+                this.StateHasChanged();
+                await Task.Delay(Time);
+                Animate = false;
+                this.StateHasChanged();
+                await Task.Delay(Time/2);
+            }
+        } while (true);
+    }
+
+}
